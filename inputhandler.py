@@ -53,4 +53,4 @@ def input_handler():
         except RuntimeError:
             print(f"\nThat is not an acceptable number in base {in_base}\n")
 
-    return in_base, out_base, in_number
+    return in_base, out_base, int(in_number)
