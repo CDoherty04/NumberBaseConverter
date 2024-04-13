@@ -11,7 +11,7 @@ def input_handler():
                 raise RuntimeError
 
         except RuntimeError:
-            print("Base system must be between 1 and 10")
+            print("Base system must be between 2 and 10")
 
         except ValueError:
             print("That isn't a valid input. Try a natural number (Example: 5)")
@@ -22,13 +22,13 @@ def input_handler():
         # Check for invalid input
         try:
             out_base = int(input("What output base would you like to use: "))
-            if 10 > out_base > 1:
+            if 10 >= out_base > 1:
                 break
             else:
                 raise RuntimeError
 
         except RuntimeError:
-            print("Base system bust be between 1 and 10")
+            print("Base system bust be between 2 and 10")
 
         except ValueError:
             print("That isn't a valid input. Try an integer (2).")
