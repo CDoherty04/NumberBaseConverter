@@ -28,7 +28,7 @@ def input_handler():
                 raise RuntimeError
 
         except RuntimeError:
-            print("Base system bust be between 2 and 10")
+            print("Base system must be between 2 and 10")
 
         except ValueError:
             print("That isn't a valid input. Try an integer (2).")
