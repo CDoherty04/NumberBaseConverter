@@ -6,7 +6,7 @@ def base_converter(in_base, out_base, in_number):
         out_number = base_10_to_2(in_number)
 
     elif out_base == 10:
-        out_number = base_to_10(in_base,in_number)
+        out_number = base_2_to_10(in_base, in_number)
 
     else:
         raise ValueError
@@ -16,6 +16,7 @@ def base_converter(in_base, out_base, in_number):
 
 def base_10_to_2(in_number):
     """Takes an input number and converts it from base 10 to base 2"""
+
     negative = False
     if in_number < 0:
         negative = True
@@ -31,8 +32,9 @@ def base_10_to_2(in_number):
     return binary_num
 
 
-def base_to_10(base,in_number):
+def base_2_to_10(base,in_number):
     """Takes an input number and converts it from base 2 to base 10"""
+
     decimal_num = 0
     negative = False
     if in_number < 0:
@@ -45,3 +47,26 @@ def base_to_10(base,in_number):
     if negative is True:
         in_number = "-" + str(in_number)
     return decimal_num
+
+
+def charlie_base_n_to_10(n_base, given_number):
+    """Takes an input number and converts it from any base to base 10"""
+
+    out_num = 0
+
+    # Multiply each digit by the base to its digit place
+    for digit_index in range(len(str(given_number))):
+
+        digit = int(str(given_number)[::-1][digit_index])
+        number_place_multiplier = n_base**digit_index
+
+        # Sum each digit
+        out_num += number_place_multiplier*digit
+
+    return out_num
+
+
+# Test
+if __name__ == "__main__":
+
+    print(charlie_base_n_to_10(7, 2166))  # Should be 783
