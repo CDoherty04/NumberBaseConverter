@@ -12,7 +12,7 @@ def base_converter(in_base, out_base, in_number):
 
 
 def base_to_10(base, in_number):
-    """Takes an input number and converts it from base 2 to base 10"""
+    """Takes an input number and a base then turns it into base 10"""
     decimal_num = 0
     negative = False
     if in_number < 0:
@@ -28,6 +28,8 @@ def base_to_10(base, in_number):
 
 
 def base_10_to(base, in_number, in_base):
+    """Takes an input number, an original base, and a new base then translates the number to base
+       10 then takes that new base 10 number and translates it to the new base"""
     num = base_to_10(base, in_number)
     new_num = ""
     negative = False
