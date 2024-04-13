@@ -1,12 +1,17 @@
 def input_handler():
-
     # Get user input for the input base
     while True:
 
         # Check for invalid input
         try:
             in_base = int(input("What input base would you like to use: "))
-            break
+            if 10 > in_base > 0:
+                break
+            else:
+                raise RuntimeError
+
+        except RuntimeError:
+            print("base system bust be between 1 and 10")
 
         except ValueError:
             print("That isn't a valid input. Try an integer (2).")
@@ -16,8 +21,14 @@ def input_handler():
 
         # Check for invalid input
         try:
-            out_base = int(input("What output base would you like to use: "))
-            break
+            out_base = int(input("What input base would you like to use: "))
+            if 10 > out_base > 0:
+                break
+            else:
+                raise RuntimeError
+
+        except RuntimeError:
+            print("base system bust be between 1 and 10")
 
         except ValueError:
             print("That isn't a valid input. Try an integer (2).")
