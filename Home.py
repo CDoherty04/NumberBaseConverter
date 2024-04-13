@@ -31,20 +31,39 @@ if __name__ == "__main__":
 
     st.markdown("***")
 
-    col1, col2 = st.columns(2)
+    # Check for Invalid Input number in a given base
+    valid = True
+    try:
+        # If negative, ignore negative sign
+        if in_number < 0:
+            for digit in str(in_number)[1:]:
+                if int(digit) >= in_base:
+                    raise RuntimeError
+        else:
+            for digit in str(in_number):
+                if int(digit) >= in_base:
+                    raise RuntimeError
 
-    # If the base is the same, return the same number
-    if in_base == out_base:
-        with col1:
-            st.markdown(f"<h2 style='text-align: center;'>Base {in_base}: {in_number}</h4>", unsafe_allow_html=True)
-        with col2:
-            st.markdown(f"<h2 style='text-align: center;'>Base {out_base}: {in_number}</h4>", unsafe_allow_html=True)
+    except RuntimeError:
+        valid = False
+        st.markdown(f"<h2 style='text-align: center;'>{in_number} can't be represented in Base-{in_base}</h4>",
+                    unsafe_allow_html=True)
 
-    else:
-        # Get the output number through the base_converter
-        out_number = base_converter(in_base, out_base, in_number)
-        with col1:
-            st.markdown(f"<h2 style='text-align: center;'>Base {in_base}: {in_number}</h4>", unsafe_allow_html=True)
-        with col2:
-            st.markdown(f"<h2 style='text-align: center;'>Base {out_base}: {out_number}</h4>", unsafe_allow_html=True)
+    if valid:
+        col1, col2 = st.columns(2)
+
+        # If the base is the same, return the same number
+        if in_base == out_base:
+            with col1:
+                st.markdown(f"<h2 style='text-align: center;'>Base {in_base}: {in_number}</h4>", unsafe_allow_html=True)
+            with col2:
+                st.markdown(f"<h2 style='text-align: center;'>Base {out_base}: {in_number}</h4>", unsafe_allow_html=True)
+
+        else:
+            # Get the output number through the base_converter
+            out_number = base_converter(in_base, out_base, in_number)
+            with col1:
+                st.markdown(f"<h2 style='text-align: center;'>Base {in_base}: {in_number}</h4>", unsafe_allow_html=True)
+            with col2:
+                st.markdown(f"<h2 style='text-align: center;'>Base {out_base}: {out_number}</h4>", unsafe_allow_html=True)
 
