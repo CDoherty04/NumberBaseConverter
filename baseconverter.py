@@ -35,5 +35,3 @@ def base_2_to_10(in_number):
     """Takes an input number and converts it from base 2 to base 10"""
 
     return in_number
-
-print(base_10_to_2(-12))
