@@ -5,7 +5,7 @@ def input_handler():
         # Check for invalid input
         try:
             in_base = int(input("What input base would you like to use: "))
-            if 10 > in_base > 0:
+            if 10 >= in_base > 0:
                 break
             else:
                 raise RuntimeError
@@ -22,7 +22,7 @@ def input_handler():
         # Check for invalid input
         try:
             out_base = int(input("What input base would you like to use: "))
-            if 10 > out_base > 0:
+            if 10 >= out_base > 0:
                 break
             else:
                 raise RuntimeError
