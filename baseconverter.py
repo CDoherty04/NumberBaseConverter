@@ -35,7 +35,7 @@ def base_10_to(base, in_number, in_base):
     negative = False
     if num < 0:
         negative = True
-        num = abs(in_number)
+        num = abs(num)
     elif num == 0:
         return "0"
     while num > 0:
