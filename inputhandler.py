@@ -33,7 +33,7 @@ def input_handler():
 
         # Check for invalid input
         try:
-            in_number = input(f"What number would you like to translate in base {in_base}: ")
+            in_number = int(input(f"What number would you like to translate in base {in_base}: "))
 
             # Check every digit for a number greater than the base system can handle
             for digit in in_number:
