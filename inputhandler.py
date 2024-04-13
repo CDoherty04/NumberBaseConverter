@@ -38,10 +38,19 @@ def input_handler():
 
         # Check for invalid input
         try:
-            in_number = int(input("What number would you like to translate: "))
+            in_number = input(f"What number would you like to translate in base {in_base}: ")
+
+            # Check every digit for a number greater than the base system can handle
+            for digit in in_number:
+                if int(digit) >= in_base:
+                    raise RuntimeError
+
+            # If the loop never catches an invalid number then continue
             break
 
         except ValueError:
-            print("That isn't a valid input. Try an integer (2).")
+            print("\nThat isn't a valid input. Try a natural number (Example: 2)\n")
+        except RuntimeError:
+            print(f"\nThat is not an acceptable number in base {in_base}\n")
 
     return in_base, out_base, in_number
