@@ -1,5 +1,4 @@
 def input_handler():
-    supported_systems = [2, 10]
 
     # Get user input for the input base
     while True:
@@ -18,12 +17,7 @@ def input_handler():
         # Check for invalid input
         try:
             out_base = int(input("What output base would you like to use: "))
-
-            # If we support the given base then continue
-            if out_base not in supported_systems:
-                print(f"We don't support 'base {out_base}' yet")
-            else:
-                break
+            break
 
         except ValueError:
             print("That isn't a valid input. Try an integer (2).")
