@@ -17,11 +17,6 @@ def base_converter(in_base, out_base, in_number):
 def base_10_to_2(in_number):
     """Takes an input number and converts it from base 10 to base 2"""
 
-    pass
-
-
-def base_2_to_10(in_number):
-    """Takes an input number and converts it from base 2 to base 10"""
     if in_number == 0:
         return "0"
     binary_num = ""
@@ -29,3 +24,9 @@ def base_2_to_10(in_number):
         binary_num = str(in_number % 2) + binary_num
         in_number //= 2
     return binary_num
+
+
+def base_2_to_10(in_number):
+    """Takes an input number and converts it from base 2 to base 10"""
+
+    return in_number
