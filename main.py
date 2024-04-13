@@ -5,6 +5,7 @@ HackKU - University of Kansas
 
 Run the main function in this file to begin the program
 """
+from baseconverter import base_converter
 from inputhandler import input_handler
 
 if __name__ == "__main__":
@@ -19,3 +20,9 @@ if __name__ == "__main__":
     if in_base == out_base:
         print(f"Base {in_base}: {in_number}\n"
               f"Base {out_base}: {in_number}")
+
+    else:
+        # Get the output number through the base_converter
+        out_number = base_converter(in_base, out_base, in_number)
+        print(f"Base {in_base}: {in_number}\n"
+              f"Base {out_base}: {out_number}")
