@@ -23,7 +23,7 @@ def base_to_10(base, in_number):
         decimal_num += int(num) * (base ** power)
         power -= 1
     if negative is True:
-        in_number = "-" + str(in_number)
+        decimal_num = int("-" + str(decimal_num))
     return decimal_num
 
 
@@ -36,7 +36,7 @@ def base_10_to(base, in_number, in_base):
     if num < 0:
         negative = True
         num = abs(in_number)
-    if num == 0:
+    elif num == 0:
         return "0"
     while num > 0:
         new_num = str(num % in_base) + new_num
