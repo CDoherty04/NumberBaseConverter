@@ -5,8 +5,8 @@ def base_converter(in_base, out_base, in_number):
     if in_base == 10 and out_base == 2:
         out_number = base_10_to_2(in_number)
 
-    elif in_base == 2 and out_base == 10:
-        out_number = base_2_to_10(in_number)
+    elif out_base == 10:
+        out_number = base_to_10(in_base,in_number)
 
     else:
         raise ValueError
@@ -31,7 +31,7 @@ def base_10_to_2(in_number):
     return binary_num
 
 
-def base_2_to_10(in_number):
+def base_to_10(base,in_number):
     """Takes an input number and converts it from base 2 to base 10"""
     decimal_num = 0
     negative = False
@@ -40,8 +40,8 @@ def base_2_to_10(in_number):
         in_number = abs(in_number)
     power = len(str(in_number)) - 1
     for num in str(in_number):
-        decimal_num += int(num) * (2**power)
+        decimal_num += int(num) * (base**power)
         power -= 1
     if negative is True:
         in_number = "-" + str(in_number)
-    return in_number
+    return decimal_num
