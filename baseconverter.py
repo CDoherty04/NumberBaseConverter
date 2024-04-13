@@ -29,9 +29,6 @@ def base_to_10(base, in_number):
 
 def base_10_to(base, in_number, in_base):
     num = base_to_10(base, in_number)
-    print(num)
-    print(in_base)
-    print(base)
     new_num = ""
     negative = False
     if num < 0:
