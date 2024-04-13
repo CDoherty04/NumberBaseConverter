@@ -33,5 +33,15 @@ def base_10_to_2(in_number):
 
 def base_2_to_10(in_number):
     """Takes an input number and converts it from base 2 to base 10"""
-
+    decimal_num = 0
+    negative = False
+    if in_number < 0:
+        negative = True
+        in_number = abs(in_number)
+    power = len(str(in_number)) - 1
+    for num in str(in_number):
+        decimal_num += int(num) * (2**power)
+        power -= 1
+    if negative is True:
+        in_number = "-" + str(in_number)
     return in_number
