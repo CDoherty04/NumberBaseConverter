@@ -22,5 +22,10 @@ def base_10_to_2(in_number):
 
 def base_2_to_10(in_number):
     """Takes an input number and converts it from base 2 to base 10"""
-
-    pass
+    if in_number == 0:
+        return "0"
+    binary_num = ""
+    while in_number > 0:
+        binary_num = str(in_number % 2) + binary_num
+        in_number //= 2
+    return binary_num
