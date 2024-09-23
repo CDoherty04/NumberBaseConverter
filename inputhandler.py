@@ -31,7 +31,7 @@ def input_handler():
             print("Base system must be between 2 and 10")
 
         except ValueError:
-            print("That isn't a valid input. Try an integer (2).")
+            print("That isn't a valid input. Try a natural number (Example: 2)")
 
     # Get user input for the input number
     while True:
@@ -51,6 +51,6 @@ def input_handler():
         except ValueError:
             print("\nThat isn't a valid input. Try a natural number (Example: 2)\n")
         except RuntimeError:
-            print(f"\nThat is not an acceptable number in base {in_base}\n")
+            print(f"\nThat is not an acceptable number in base {out_base}\n")
 
     return in_base, out_base, int(in_number)

@@ -3,7 +3,7 @@ def base_converter(in_base, out_base, in_number):
 
     # Choose which conversion function to use based on in_base vs out_base
     if out_base == 10:
-        out_number = base_to_10(in_base, in_number)
+        out_number = base_n_to_10(in_base, in_number)
 
     else:
         out_number = base_10_to(in_base, in_number, out_base)
@@ -11,7 +11,7 @@ def base_converter(in_base, out_base, in_number):
     return out_number
 
 
-def base_to_10(base, in_number):
+def base_n_to_10(base, in_number):
     """Takes an input number and a base then turns it into base 10"""
     decimal_num = 0
     negative = False
@@ -30,7 +30,7 @@ def base_to_10(base, in_number):
 def base_10_to(base, in_number, in_base):
     """Takes an input number, an original base, and a new base then translates the number to base
        10 then takes that new base 10 number and translates it to the new base"""
-    num = base_to_10(base, in_number)
+    num = base_n_to_10(base, in_number)
     new_num = ""
     negative = False
     if num < 0:
